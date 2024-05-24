@@ -113,14 +113,11 @@ function generatePassword() {
     password += charset.charAt(Math.floor(Math.random() * charset.length));
   }
 
-  // Ensure at least one special character
   password += specialChars.charAt(
     Math.floor(Math.random() * specialChars.length)
   );
-  // Ensure at least one uppercase letter
-  password += charset.charAt(Math.floor(Math.random() * 26) + 26); // Uppercase letters are at positions 26-51
+  password += charset.charAt(Math.floor(Math.random() * 26) + 26);
 
-  // Shuffle the password to ensure randomness
   password = password
     .split("")
     .sort(() => Math.random() - 0.5)
