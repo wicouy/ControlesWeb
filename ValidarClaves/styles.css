@@ -1,0 +1,51 @@
+body {
+  background-color: #f5f5dc;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+  transition: width 0.4s ease, background-color 0.4s ease;
+}
+
+#passwordHelp {
+  list-style-type: none;
+  padding: 0;
+}
+
+#passwordHelp li {
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+}
+
+#passwordHelp li::before {
+  content: "•";
+  color: red;
+  display: inline-block;
+  width: 1em;
+  margin-right: 0.5em;
+}
+
+#passwordHelp li.valid::before {
+  color: green;
+}
+
+#submitButton[disabled] {
+  cursor: not-allowed;
+}
+
+.input-group-text {
+  cursor: pointer;
+}
