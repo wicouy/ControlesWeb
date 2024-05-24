@@ -4,6 +4,6 @@
 
 📦src
 ┗ 📂ValidarClaves
-┃ ┣ 📜index.html
-┃ ┣ 📜scripts.js
-┃ ┗ 📜styles.css
+┣ 📜index.html
+┣ 📜scripts.js
+┗ 📜styles.css

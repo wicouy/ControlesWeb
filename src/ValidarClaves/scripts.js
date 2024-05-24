@@ -93,3 +93,38 @@ document
     this.querySelector("i").classList.remove("fa-eye");
     this.querySelector("i").classList.add("fa-eye-slash");
   });
+
+document
+  .getElementById("generatePassword")
+  .addEventListener("click", function () {
+    const password = generatePassword();
+    document.getElementById("password").value = password;
+    validatePassword();
+  });
+
+function generatePassword() {
+  const length = 12;
+  const charset =
+    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+  const specialChars = '!@#$%^&*(),.?":{}|<>';
+  let password = "";
+
+  for (let i = 0; i < length - 2; i++) {
+    password += charset.charAt(Math.floor(Math.random() * charset.length));
+  }
+
+  // Ensure at least one special character
+  password += specialChars.charAt(
+    Math.floor(Math.random() * specialChars.length)
+  );
+  // Ensure at least one uppercase letter
+  password += charset.charAt(Math.floor(Math.random() * 26) + 26); // Uppercase letters are at positions 26-51
+
+  // Shuffle the password to ensure randomness
+  password = password
+    .split("")
+    .sort(() => Math.random() - 0.5)
+    .join("");
+
+  return password;
+}
